@@ -7,28 +7,28 @@ public class Account
     private string password;
     private string type;
 
-    public Account(int accId, string usn, string pwd, string t) 
+    public Account(int accountId, string username, string password, string type) 
     {
-        setAccountId(accId);
-        setUsername(usn);
-        setPassword(pwd);
-        setType(t);
+        setAccountId(accountId);
+        setUsername(username);
+        setPassword(password);
+        setType(type);
     }
 
     public int getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int id) {
-        id > 0 ? accountId = id : throw new ArgumentException("Invalid account id");
+    public void setAccountId(int accountId) {
+        accountId > 0 ? this.accountId = accountId : throw new ArgumentException("Invalid account id");
     }
 
     public string getUsername() {
         return username;
     }
 
-    public void setUsername(string usn) {
-        username = usn;
+    public void setUsername(string username) {
+        this.username = username;
     }
 
     public string getPassword()
@@ -36,23 +36,23 @@ public class Account
         return password;
     }
 
-    public void setPassword(string pwd) 
+    public void setPassword(string password) 
     {
-        password = pwd;
+        this.password = password;
     }
 
     public string getType() {
         return type;
     }
 
-    public void setType(string t) {
-        if(t.ToLowerCase().equals("waiter"))
+    public void setType(string type) {
+        if(type.ToLowerCase().equals("waiter"))
         {
-            type = "WAITER";
+            this.type = "WAITER";
         }
         else if (t.ToLowerCase().equals("manager"))
         {
-            type = "MANAGER";
+            this.type = "MANAGER";
         }
         else
         {

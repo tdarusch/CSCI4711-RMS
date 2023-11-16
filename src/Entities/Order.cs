@@ -8,19 +8,19 @@ public class Order
     private Account waiter;
     private int tableNo;
 
-    public Order(List<Item> i, Account w, int tno)
+    public Order(List<Item> items, Account waiter, int tableNo)
     {
-        items = i;
+        this.items = items;
         total = calculateTotal();
-        setWaiter(w);
-        setTableNo(tno);
+        setWaiter(waiter);
+        setTableNo(tableNo);
     }
 
-    public Order(Account w, int tno)
+    public Order(Account waiter, int tableNo)
     {
         items = new List<Item>();
-        setWaiter(w);
-        setTableNo(tno);
+        setWaiter(waiter);
+        setTableNo(tableNo);
     }
 
     private int calculateTotal()
@@ -52,9 +52,9 @@ public class Order
         return waiter;
     }
 
-    public void setWaiter(Account w)
+    public void setWaiter(Account waiter)
     {
-        waiter = w;
+        this.waiter = waiter;
     }
 
     public int getTableNo()
@@ -62,9 +62,9 @@ public class Order
         return tableNo;
     }
 
-    public void setTableNo(int tno)
+    public void setTableNo(int tableNo)
     {
-        tno > 0 ? tableNo = tno : throw new ArgumentException("Invalid table number");
+        tableNo > 0 ? this.tableNo = tableNo : throw new ArgumentException("Invalid table number");
     }
 
 }

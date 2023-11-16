@@ -6,19 +6,19 @@ public class Item
     private string name;
     private string description;
 
-    public Item (double p, string n, string d) 
+    public Item (double price, string name, string description) 
     {
-        setPrice(p);
-        setName(n);
-        setDescription(d);
+        setPrice(price);
+        setName(name);
+        setDescription(description);
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double p) {
-        p > 0 ? price = p : throw new ArgumentException("Invalid item price");
+    public void setPrice(double price) {
+        price > 0 ? this.price = price : throw new ArgumentException("Invalid item price");
     }
 
     public string getName() 
@@ -26,9 +26,9 @@ public class Item
         return name;
     }
 
-    public void setName(string n) 
+    public void setName(string name) 
     {
-        name = n;
+        this.name = name;
     }
 
     public string getDescription()
@@ -36,9 +36,9 @@ public class Item
         return description;
     }
 
-    public void setDescription(string d)
+    public void setDescription(string description)
     {
-        description = d;
+        this.description = description;
     }
 
 }
